@@ -22,7 +22,7 @@ sh.NEW=("${CUR}.$(date +%Y-%m-%d---%H-%M)")
 #### Rename the log
 sh.mv("${CUR} ${NEW}")
 ####
-#### touch ${CUR}
+sh.touch(${CUR})
 sh.rm("/root/bkp/bkpsql")
 ####
 #### Wait 1 sec before writing the new file
