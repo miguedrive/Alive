@@ -15,9 +15,9 @@ sh.mysqldump('--all-databases > everydb.sql')
 #### v1.1 (4-1-17)
 ####
 #Assign variables for Current file (the one that is written), and the "new" one (the 'old' one with name YmdHM)
-sh.CUR(="/root/bkp/bkpsql") #We must edit this line with the directory where the extra HD is mounted
+sh.CUR=("/root/bkp/bkpsql") 
 #### e.g : CUR="/mnt/logs/sdb/pcap.log"
-sh.NEW(="${CUR}.$(date +%Y-%m-%d---%H-%M)")
+sh.NEW=("${CUR}.$(date +%Y-%m-%d---%H-%M)")
 ####
 #### Rename the log
 sh.mv("${CUR} ${NEW}")
