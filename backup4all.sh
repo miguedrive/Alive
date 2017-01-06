@@ -18,20 +18,20 @@ mysqldump --all-databases > everydb.sql
 ####
 #Assign variables for Current file (the one that is written), and the "new" one (the 'old' one with name YmdHM)
 
-CUR="/root/bkp/bkpsql" 
+CUR="/root/bkp/everydb.sql" 
 NEW="${CUR}.$(date +%Y-%m-%d---%H-%M)"
 
 
 #### Rename the log
 mv ${CUR} ${NEW}
 touch ${CUR}
-rm /root/bkp/bkpsql
+rm /root/bkp/everydb.sql
 #### Wait 1 sec before writing the new file
 sleep 1
 #### Compress the old files
 #### xz("-9 ${NEW}")
 
 #Rsync to bkp server
-rsync /root/bkp/everydb.sql root@192.168.1.4:/root/bkp
+rsync /root/bkp/everydb.sql root@192.168.1.7:/backups2.vg5-edicion.Contenidos/BackupDBs/
 
 
